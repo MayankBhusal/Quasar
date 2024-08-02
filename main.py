@@ -54,8 +54,8 @@ def speech_to_text(x):
     engin.say(x)
     engin.runAndWait()
  
-print("Welcome sir \n","It's me Jarvis your virtual Assistant")
-speech_to_text("Welcome sir!!, It's me Jarvis your virtual Assistant ")
+print("Welcome sir \n","It's me Quasar your virtual Assistant")
+speech_to_text("Welcome sir!!, It's me Quasar your virtual Assistant ")
 def sptex():
     recognizer = sr.Recognizer()
     with sr.Microphone() as source:
