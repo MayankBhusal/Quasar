@@ -1,9 +1,6 @@
 import pyttsx3
 import speech_recognition as sr
-import webbrowser
-import datetime
-import pyjokes
-import pyautogui 
+
 
 
 
@@ -71,37 +68,6 @@ def sptex():
         except sr.UnknownValueError:
             print("")
            
+whilr
 
-if __name__ == "__main__":
-    while True :
-     data1 = convert_to_lower(sptex())
-     if "jarvis" in data1:
-         print("Yes Sir , I am listening .How can i help you sir ? ")
-         speech_to_text("yes sir!! , i am listening . how can i help you sir?")
-     elif "your name" in data1:
-         name = "My name is Jarvis."
-         print(name)
-         speech_to_text(name)
-     elif 'time right now' in data1:
-         time = datetime.datetime.now().strftime("%I%M%p")
-         print(time)
-         speech_to_text(time)
-     elif 'open youtube' in data1:
-         webbrowser.open("https://www.youtube.com/")
-     elif 'open google' in data1:
-        webbrowser.open("https://www.google.com/")
-     elif "joke" in data1:
-         joke_1=pyjokes.get_joke(language="en",category="neutral")
-         print(joke_1)
-         speech_to_text(joke_1)
-     elif "close tab" in data1:
-         speech_to_text("Okay sir, closing the tab")
-         pyautogui.hotkey('ctrl', 'w')
-     elif "close window" in data1:
-         speech_to_text("Okay sir, closing the window")
-         pyautogui.hotkey('alt', 'F4')
-     elif "exit" in data1:
-         print("okay sir!!. Have a fantastic day!!! .")
-         speech_to_text("okay sir , have a fantastic day .")
-         break
           
