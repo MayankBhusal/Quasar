@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account - Tilottama Connect</title>
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        .nav-bar {
+            position: fixed;
+            top: 0;
+            z-index: 9999;
+            max-height: 120px;
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            flex-direction: row;
+        }
+
+        nav {
+            justify-content: space-around;
+            align-items: center;
+            display: flex;
+            width: 100%;
+            height: auto;
+
+        }
+
+
+        div.accnt {
+            background: rgba(0, 0, 0, 0.596);
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            right: 0;
+            top: 0;
+            max-width: 50px;
+            max-height: 50px;
+            margin-right: 2%;
+            margin-top: 1%;
+            border-radius: 50%;
+            border: 1px solid rgba(255, 255, 255, 0.473);
+        }
+
+        .accnt2 {
+            margin-left: 30px;
+            margin-right: 30px;
+            color: white;
+            background: rgba(0, 0, 0, 0.596);
+            padding: 20px;
+            padding-bottom: -10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            right: 0;
+            top: 0;
+            max-width: 50px;
+            max-height: 50px;
+            border-radius: 50%;
+            border: 1px solid rgba(255, 255, 255, 0.473);
+            margin-right: 6%;
+            margin-top: 1%;
+        }
+
+
+
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #8e44ad, #3498db);
+            color: #fff;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .dark-mode {
+            background: #121212;
+            color: #eee;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 80px;
+        }
+
+        .account-container {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            width: 60%;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .profile-pic {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #fff;
+        }
+
+        .account-info,
+        .events-info {
+            margin-bottom: 15px;
+            font-size: 16px;
+            text-align: left;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 12px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+            font-weight: bold;
+        }
+
+        .btn-logout {
+            background: #e74c3c;
+            color: white;
+        }
+
+        .btn-logout:hover {
+            background: #c0392b;
+        }
+
+        .edit-profile {
+            background: #f1c40f;
+            color: white;
+        }
+
+        .edit-profile:hover {
+            background: #d4ac0d;
+        }
+
+        .dark-mode-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #222;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        function editProfile() {
+            alert("Edit profile feature will be added soon!");
+        }
+        function toggleDarkMode() {
+            document.body.classList.toggle("dark-mode");
+        }
+    </script>
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <div class="nav-bar">
+        <nav>
+            <div class="essentials">
+                <div class="logo">Tilottama Connect</div>
+                <ul class="nav-links">
+
+                    <li><a href="\index.html">Home</a></li>
+                    <li><a href="weather.html"><span id="temp8"></span> | <span id="cloud8"></span> </a></li>
+                    <li><a href="waste.html">Waste Management</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="blogs.html">Blog</a></li>
+                    <li><a href="forum.html">Forum</a></li>
+                    <li></li>
+                </ul>
+                <button id="togglePanel">☰</button>
+            </div>
+            <div class="accnt2"><a href="tilu_ai.html"><svg class="tilu" xmlns="http://www.w3.org/2000/svg" width="25"
+                        height="25" fill="#61ff61" class="bi bi-brilliance" viewBox="0 0 16 16">
+                        <path
+                            d="M8 16A8 8 0 1 1 8 0a8 8 0 0 1 0 16M1 8a7 7 0 0 0 7 7 3.5 3.5 0 1 0 0-7 3.5 3.5 0 1 1 0-7 7 7 0 0 0-7 7" />
+                    </svg></a></div>
+            <div class="accnt"><a href="Account.html" id="active"><svg xmlns="http://www.w3.org/2000/svg" width="30"
+                        height="30" fill="white" class="bi bi-person-fill-gear" viewBox="0 0 16 16">
+                        <path
+                            d="M11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0m-9 8c0 1 1 1 1 1h5.256A4.5 4.5 0 0 1 8 12.5a4.5 4.5 0 0 1 1.544-3.393Q8.844 9.002 8 9c-5 0-6 3-6 4m9.886-3.54c.18-.613 1.048-.613 1.229 0l.043.148a.64.64 0 0 0 .921.382l.136-.074c.561-.306 1.175.308.87.869l-.075.136a.64.64 0 0 0 .382.92l.149.045c.612.18.612 1.048 0 1.229l-.15.043a.64.64 0 0 0-.38.921l.074.136c.305.561-.309 1.175-.87.87l-.136-.075a.64.64 0 0 0-.92.382l-.045.149c-.18.612-1.048.612-1.229 0l-.043-.15a.64.64 0 0 0-.921-.38l-.136.074c-.561.305-1.175-.309-.87-.87l.075-.136a.64.64 0 0 0-.382-.92l-.148-.045c-.613-.18-.613-1.048 0-1.229l.148-.043a.64.64 0 0 0 .382-.921l-.074-.136c-.306-.561.308-1.175.869-.87l.136.075a.64.64 0 0 0 .92-.382zM14 12.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0" />
+                    </svg></a></div>
+
+        </nav>
+    </div>
+    <div class="container">
+        <div class="account-container">
+            <h2>Account Information</h2>
+            <img src="https://i.ibb.co/Y790CYcC/Account.png" alt="Profile Picture" class="profile-pic">
+            <div class="account-info">
+                <p><strong>Name:</strong> John Doe</p>
+                <p><strong>Age:</strong> 25</p>
+                <p><strong>Address:</strong> 123 Street, City</p>
+                <p><strong>UID:</strong> 123456</p>
+                <p><strong>Email:</strong> user@example.com</p>
+                <div id="google_translate_element"></div>
+
+                <!-- Language Buttons -->
+                <div class="language-switcher">
+                    <button onclick="translateLanguage('en')">English</button>
+                    <button onclick="translateLanguage('ne')">नेपाली</button>
+                </div>
+
+
+            </div>
+            <button class="btn edit-profile" onclick="editProfile()">Edit Profile</button>
+            <button class="dark-mode-toggle" onclick="toggleDarkMode()">Dark Mode</button>
+
+            <h2>Participated Events</h2>
+            <div class="events-info">
+                <p><strong>Event 1:</strong> Tilottama Hackathon 2024</p>
+                <p><strong>Event 2:</strong> Robotics Challenge</p>
+                <p><strong>Event 3:</strong> Community Cleanup Drive</p>
+            </div>
+            <button class="btn btn-logout">Logout</button>
+        </div>
+    </div>
+    <script src="/script.js"></script>
+    <!-- Google Translate API -->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+        }
+    </script>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+
+</html>
