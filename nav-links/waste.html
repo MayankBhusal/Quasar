@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waste Management - Tilottama Connect</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+    <style>
+        /* CSS Styles */
+        .nav-bar {
+            position: fixed;
+            top: 0;
+            z-index: 9999;
+            max-height: 100px;
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            flex-direction: row;
+        }
+
+        nav {
+            justify-content: space-around;
+            align-items: center;
+            display: flex;
+            width: 100%;
+            height: auto;
+        }
+
+        div.accnt {
+            background: rgba(0, 0, 0, 0.596);
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            right: 0;
+            top: 0;
+            max-width: 50px;
+            max-height: 50px;
+            margin-right: 2%;
+            margin-top: 1%;
+            border-radius: 50%;
+            border: 1px solid rgba(255, 255, 255, 0.473);
+        }
+
+        .accnt2 {
+            margin-left: 30px;
+            margin-right: 30px;
+            color: white;
+            background: rgba(0, 0, 0, 0.596);
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            right: 0;
+            top: 0;
+            max-width: 50px;
+            max-height: 50px;
+            border-radius: 50%;
+            border: 1px solid rgba(255, 255, 255, 0.473);
+            margin-right: 6%;
+            margin-top: 1%;
+        }
+footer{
+    background-color: #2d3e50;
+      color: white;
+      text-align: center;
+      padding: 10px;
+     
+      bottom: 0;
+      width: 100%;
+}
+        body {
+            
+            background-color: #f4f4f4;
+            transition: background 0.3s ease-in-out;
+        }
+
+        header {
+            background: linear-gradient(90deg, #16a085, #2c3e50);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .container1 {
+            width: 90%;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        .highlight1 {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .highlight1:hover {
+            transform: scale(1.02);
+        }
+
+        table {
+            border-radius: 16px;
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th,
+        td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+
+        th {
+            background-color: #16a085;
+            color: white;
+            font-size: 18px;
+        }
+
+        .waste-category {
+            background: white;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .waste-category:hover {
+            transform: scale(1.05);
+        }
+
+        .fade-in1 {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .fade-in1.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .waste-category .more-info-content {
+            display: none;
+            margin-top: 10px;
+        }
+
+        .waste-category.expanded .more-info-content {
+            display: block;
+        }
+
+        .method-photos {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .method-photos img {
+            width: 45%;
+            margin: 5px;
+            border-radius: 5px;
+        }
+
+        .waste-method {
+            cursor: pointer;
+            font-size: 20px;
+            padding: 15px;
+            color: rgb(0, 0, 0);
+            text-align: center;
+        }
+
+        .waste-category p {
+            font-size: 16px;
+            margin-bottom: 15px;
+            color: #555;
+        }
+
+        .more-info-btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #16a085;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .more-info-btn:hover {
+            background-color: #1abc9c;
+        }
+
+        #togglePanel {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #333;
+        }
+
+        /* Responsive Styles */
+       
+    </style>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <div class="nav-bar">
+        <nav>
+            <div class="essentials">
+                <div class="logo">Tilottama Connect</div>
+                <ul class="nav-links">
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="weather.html"><span class="temp"></span> | <span class="cld"></span></a></li>
+                    <li><a href="waste.html" id="active">Waste Management</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="blogs.html">Blog</a></li>
+                    <li><a href="forum.html">Forum</a></li>
+                    <li></li>
+                </ul>
+                <button id="togglePanel">☰</button>
+            </div>
+            <div class="accnt2"><a href="tilu_ai.html"><svg class="tilu" xmlns="http://www.w3.org/2000/svg" width="25"
+                        height="25" fill="#61ff61" class="bi bi-brilliance" viewBox="0 0 16 16">
+                        <path
+                            d="M8 16A8 8 0 1 1 8 0a8 8 0 0 1 0 16M1 8a7 7 0 0 0 7 7 3.5 3.5 0 1 0 0-7 3.5 3.5 0 1 1 0-7 7 7 0 0 0-7 7" />
+                    </svg></a></div>
+            <div class="accnt"><a href="Account.html"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
+                        fill="white" class="bi bi-person-fill-gear" viewBox="0 0 16 16">
+                        <path
+                            d="M11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0m-9 8c0 1 1 1 1 1h5.256A4.5 4.5 0 0 1 8 12.5a4.5 4.5 0 0 1 1.544-3.393Q8.844 9.002 8 9c-5 0-6 3-6 4m9.886-3.54c.18-.613 1.048-.613 1.229 0l.043.148a.64.64 0 0 0 .921.382l.136-.074c.561-.306 1.175.308.87.869l-.075.136a.64.64 0 0 0 .382.92l.149.045c.612.18.612 1.048 0 1.229l-.15.043a.64.64 0 0 0-.38.921l.074.136c.305.561-.309 1.175-.87.87l-.136-.075a.64.64 0 0 0-.92.382l-.045.149c-.18.612-1.048.612-1.229 0l-.043-.15a.64.64 0 0 0-.921-.38l-.136.074c-.561.305-1.175-.309-.87-.87l.075-.136a.64.64 0 0 0-.382-.92l-.148-.045c-.613-.18-.613-1.048 0-1.229l.148-.043a.64.64 0 0 0 .382-.921l-.074-.136c-.306-.561.308-1.175.869-.87l.136.075a.64.64 0 0 0 .92-.382zM14 12.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0" />
+                    </svg></a></div>
+        </nav>
+    </div>
+
+    <header>
+        <h1>Waste Management</h1>
+    </header>
+
+    <div class="container1">
+        <section id="waste-truck-routine" class="highlight1 fade-in1">
+            <h2>🚛 Waste Truck Routine</h2>
+            <table>
+                <tr class="highlight1-current-day">
+                    <th>Driver Name</th>
+                    <th>Phone Number</th>
+                    <th>Time</th>
+                    <th>Place</th>
+                    <th>Day</th>
+                    <th>Date</th>
+                </tr>
+                <tr>
+                    <td>Ram Bahadur</td>
+                    <td>9876543210</td>
+                    <td>6:00 AM</td>
+                    <td>Main Street</td>
+                    <td>Monday</td>
+                    <td>19th Feb</td>
+                </tr>
+                <tr>
+                    <td>Shyam Lal</td>
+                    <td>9865432109</td>
+                    <td>7:30 AM</td>
+                    <td>Green Park</td>
+                    <td>Tuesday</td>
+                    <td>20th Feb</td>
+                </tr>
+                <tr>
+                    <td>Sita Devi</td>
+                    <td>9854321098</td>
+                    <td>8:00 AM</td>
+                    <td>Tilottama Market</td>
+                    <td>Wednesday</td>
+                    <td>21st Feb</td>
+                </tr>
+                <tr>
+                    <td>Hari Bahadur</td>
+                    <td>9843210987</td>
+                    <td>9:00 AM</td>
+                    <td>Chandani Chowk</td>
+                    <td>Thursday</td>
+                    <td>22nd Feb</td>
+                </tr>
+                <tr>
+                    <td>Gita Kumari</td>
+                    <td>9832109876</td>
+                    <td>10:00 AM</td>
+                    <td>Lake View</td>
+                    <td>Friday</td>
+                    <td>23rd Feb</td>
+                </tr>
+                <tr>
+                    <td>Krishna Lal</td>
+                    <td>9821098765</td>
+                    <td>11:30 AM</td>
+                    <td>Sunset Boulevard</td>
+                    <td>Saturday</td>
+                    <td>24th Feb</td>
+                </tr>
+                <tr>
+                    <td>Asha Sharma</td>
+                    <td>9810987654</td>
+                    <td>1:00 PM</td>
+                    <td>River Road</td>
+                    <td>Sunday</td>
+                    <td>25th Feb</td>
+                </tr>
+            </table>
+        </section>
+
+        <section id="waste-management-info" class="highlight1 fade-in1">
+            <h2>♻️ How to Manage Waste</h2>
+            <p>Proper waste management is crucial to keeping Tilottama clean and green. Here are some effective
+                methods for handling different types of waste:</p>
+
+            <div class="waste-category">
+                <h3 class="waste-method">🍃 Organic Waste</h3>
+                <p>Organic waste includes food scraps, garden waste, and biodegradable materials. Proper disposal
+                    helps in composting and reducing landfill usage.</p>
+                <button class="more-info-btn">More Info</button>
+                <div class="more-info-content">
+                    <h2>🍃 Organic Waste - How to Manage</h2>
+                    <ul>
+                        <li>Use compost bins for food scraps.</li>
+                        <li>Keep organic waste separate from plastics and metals.</li>
+                        <li>Regularly maintain compost piles to ensure proper decomposition.</li>
+                        <li>Consider using kitchen scraps for gardening.</li>
+                        <li>Encourage neighbors to compost as well.</li>
+                        <li>Participate in community composting programs.</li>
+                    </ul>
+                    <div class="method-photos">
+                        <img src="https://i.ibb.co/5Xrx89yD/or1.jpg" alt="Organic Waste Image 1">
+                        <img src="https://i.ibb.co/7NJ9JwwX/org.jpg" alt="Organic Waste Image 2">
+                    </div>
+                    <!-- <p>Additional Content about Organic Waste can be added here.</p> -->
+                </div>
+            </div>
+
+            <div class="waste-category">
+                <h3 class="waste-method">🔄 Recyclable Waste</h3>
+                <p>Recyclable waste consists of materials like paper, cardboard, plastic, and glass that canbe reused
+                    after processing.</p>
+                <button class="more-info-btn">More Info</button>
+                <div class="more-info-content">
+                    <h2>🔄 Recyclable Waste - How to Manage</h2>
+                    <ul>
+                        <li>Sort recyclables into categories: paper, plastic, glass, and metal.</li>
+                        <li>Rinse containers before recycling to prevent contamination.</li>
+                        <li>Check local recycling programs for proper disposal guidelines.</li>
+                        <li>Use reusable bags to reduce plastic waste.</li>
+                        <li>Educate others about the importance of recycling.</li>
+                        <li>Participate in local recycling drives.</li>
+                    </ul>
+                    <div class="method-photos">
+                        <img src="http://i.ibb.co/tpGv5wM8/re1.jpg" alt="Recyclable Waste Image 1">
+                        <img src="https://i.ibb.co/xK98QHX9/re2.jpg" alt="Recyclable Waste Image 2">
+                    </div>
+                    <!-- <p>Additional Content about Recyclable Waste can be added here.</p> -->
+                </div>
+            </div>
+
+            <div class="waste-category">
+                <h3 class="waste-method">☣️ Hazardous Waste</h3>
+                <p>Hazardous waste includes items like batteries, chemicals, and electronic devices that require special
+                    handling to prevent environmental harm.</p>
+                <button class="more-info-btn">More Info</button>
+                <div class="more-info-content">
+                    <h2>☣️ Hazardous Waste - How to Manage</h2>
+                    <ul>
+                        <li>Dispose of batteries and electronics at designated collection points.</li>
+                        <li>Handle chemicals with care and follow disposal instructions.</li>
+                        <li>Never mix different types of hazardous waste.</li>
+                        <li>Store hazardous materials in secure containers.</li>
+                        <li>Contact local authorities for information on hazardous waste disposal.</li>
+                        <li>Support initiatives promoting safe hazardous waste management.</li>
+                    </ul>
+                    <div class="method-photos">
+                        <img src="https://i.ibb.co/0425xtv/hw1.jpg" alt="Hazardous Waste Image 1">
+                        <img src="http://i.ibb.co/FLL23JFW/hw2.jpg" alt="Hazardous Waste Image 2">
+                    <!-- </div> <p>Additional Content about Hazardous Waste can be added here.</p> -->
+                   
+                </div>
+            </div>
+        </div>
+
+            <div class="waste-category">
+                <h3 class="waste-method">🗑️ General Waste</h3>
+                <p>General waste includes non-recyclable and non-hazardous materials that are typically disposed of in
+                    landfills.</p>
+                <button class="more-info-btn">More Info</button>
+                <div class="more-info-content">
+                    <h2>🗑️ General Waste - How to Manage</h2>
+                    <ul>
+                        <li>Reduce the amount of waste you generate.</li>
+                        <li>Reuse items whenever possible.</li>
+                        <li>Dispose of general waste in designated bins.</li>
+                        <li>Avoid using single-use plastics.</li>
+                        <li>Support businesses that prioritize waste reduction.</li>
+                        <li>Educate yourself about proper waste disposal practices.</li>
+                    </ul>
+                    <div class="method-photos">
+                        <img src="http://i.ibb.co/gMb1c3FQ/gw.jpg" alt="General Waste Image 1">
+                        <img src="https://i.ibb.co/JRsGrBV3/gw1.jpg" alt="General Waste Image 2">
+                    </div>
+                    <!-- <p>Additional Content about General Waste can be added here.</p> -->
+                </div>
+            </div>
+
+            <div class="waste-category">
+                <h3 class="waste-method">📱 Electronic Waste</h3>
+                <p>Electronic waste includes discarded devices such as phones and computers. It should be recycled
+                    properly to prevent pollution.</p>
+                <button class="more-info-btn">More Info</button>
+                <div class="more-info-content">
+                    <h2>📱 Electronic Waste - How to Manage</h2>
+                    <ul>
+                        <li>Donate or sell working electronics instead of discarding them.</li>
+                        <li>Take broken devices to certified e-waste recycling centers.</li>
+                        <li>Remove personal data before disposing of electronic devices.</li>
+                        <li>Participate in e-waste collection events in your community.</li>
+                        <li>Educate others about the importance of recycling electronics.</li>
+                        <li>Consider repairing devices instead of replacing them.</li>
+                    </ul>
+                    <div class="method-photos">
+                        <img src="https://i.ibb.co/xKg8ZZC7/e1.jpg" alt="Electronic Waste Image 1">
+                        <img src="https://i.ibb.co/Q7QGq6wL/e2.jpg" alt="Electronic Waste Image 2">
+                    </div>
+                    <!-- <p>Additional Content about Electronic Waste can be added here.</p> -->
+                </div>
+           
+               
+        </section>
+       
+    </div>
+    <footer>
+        <p>&copy; 2024 Tilottama Connect</p>
+    </footer>
+    
+
+    <script>
+        // JavaScript
+        document.addEventListener("DOMContentLoaded", function () {
+            // Fade-in effect
+            const elements = document.querySelectorAll('.fade-in1');
+            elements.forEach(element => {
+                const observer = new IntersectionObserver(entries => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            element.classList.add('visible');
+                            observer.unobserve(element);
+                        }
+                    });
+                });
+                observer.observe(element);
+            });
+
+            // More info toggle
+            document.querySelectorAll(".more-info-btn").forEach(button => {
+                button.addEventListener("click", function (event) {
+                    event.preventDefault();
+                    const wasteCategory = button.parentNode;
+                    wasteCategory.classList.toggle("expanded");
+                    if (button.textContent === "More Info") {
+                        button.textContent = "Less Info";
+                    } else {
+                        button.textContent = "More Info";
+                    }
+                });
+            });
+
+            // Responsive menu toggle
+            const togglePanel = document.getElementById('togglePanel');
+            const navLinks = document.querySelector('.nav-links');
+
+            togglePanel.addEventListener('click', () => {
+                navLinks.style.display = navLinks.style.display === 'block' ? 'none' : 'block';
+            });
+
+            // Close menu on link click (for smaller screens)
+            const navLinksList = document.querySelectorAll('.nav-links li a');
+            navLinksList.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (window.innerWidth <= 768) {
+                        navLinks.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

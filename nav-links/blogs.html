@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Page</title>
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        .nav-bar {
+            position: fixed;
+            top: 0;
+            z-index: 9999;
+            max-height: 120px;
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            flex-direction: row;
+        }
+
+        nav {
+            justify-content: space-around;
+            align-items: center;
+            display: flex;
+            width: 100%;
+            height: auto;
+
+        }
+
+
+        div.accnt {
+            background: rgba(0, 0, 0, 0.596);
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            right: 0;
+            top: 0;
+            max-width: 50px;
+            max-height: 50px;
+            margin-right: 2%;
+            margin-top: 1%;
+            border-radius: 50%;
+            border: 1px solid rgba(255, 255, 255, 0.473);
+        }
+
+        .accnt2 {
+            margin-left: 30px;
+            margin-right: 30px;
+            color: white;
+            background: rgba(0, 0, 0, 0.596);
+            padding: 20px;
+            padding-bottom: -10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            right: 0;
+            top: 0;
+            max-width: 50px;
+            max-height: 50px;
+            border-radius: 50%;
+            border: 1px solid rgba(255, 255, 255, 0.473);
+            margin-right: 6%;
+            margin-top: 1%;
+        }
+
+        body {
+
+            background-color: #fff;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .blog-post {
+            background: #f9f9f9;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 10px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: 0.3s;
+        }
+
+        .blog-post:hover {
+            background: #eee;
+        }
+
+        .blog-post img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 600px;
+            color: #333;
+            text-align: center;
+        }
+
+        .close {
+            float: right;
+            cursor: pointer;
+            font-size: 24px;
+        }
+
+        .body-main {
+            margin-top: 5%;
+        }
+
+
+        .container ul {
+
+            padding-top: 10px;
+            border-top: 1px solid rgba(0, 0, 0, 0.151);
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            justify-content: space-around;
+            align-items: center;
+            margin-right: 4vh;
+        }
+
+        .container ul li {
+            list-style: none;
+        }
+
+        li button {
+            border: none;
+            border-radius: 1000%;
+            padding: 5px;
+            padding-left: 7px;
+            padding-right: 7px;
+
+
+        }
+
+
+        .dislike {
+            padding-top: 7px;
+        }
+
+        .like:hover {
+
+            background-color: #61ff61;
+        }
+
+        .dislike:hover {
+
+            background-color: rgba(255, 0, 0, 0.514);
+        }
+
+        .like {
+            margin-right: 40px;
+        }
+
+        .views {
+            color: rgb(0, 0, 0);
+            padding: 5px;
+            background-color: rgba(128, 128, 128, 0.158);
+            border-radius: 6px;
+        }
+        footer{
+      background-color: #2d3e50;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      bottom: 0;
+      width: 100%;
+}
+    </style>
+</head>
+
+<body>
+
+
+    <div class="nav-bar">
+        <nav>
+            <div class="essentials">
+                <div class="logo">Tilottama Connect</div>
+                <ul class="nav-links">
+
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="weather.html"><span class="temp"></span> | <span class="cld"></span> </a></li>
+                    <li><a href="waste.html">Waste Management</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="#blog" id="active">Blog</a></li>
+                    <li><a href="forum.html">Forum</a></li>
+
+                </ul>
+                <button id="togglePanel">☰</button>
+            </div>
+            <div class="accnt2"><a href="tilu_ai.html" id="active"><svg class="tilu" xmlns="http://www.w3.org/2000/svg"
+                        width="25" height="25" fill="#61ff61" class="bi bi-brilliance" viewBox="0 0 16 16">
+                        <path
+                            d="M8 16A8 8 0 1 1 8 0a8 8 0 0 1 0 16M1 8a7 7 0 0 0 7 7 3.5 3.5 0 1 0 0-7 3.5 3.5 0 1 1 0-7 7 7 0 0 0-7 7" />
+                    </svg></a></div>
+            <div class="accnt"><a href="Account.html"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
+                        fill="white" class="bi bi-person-fill-gear" viewBox="0 0 16 16">
+                        <path
+                            d="M11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0m-9 8c0 1 1 1 1 1h5.256A4.5 4.5 0 0 1 8 12.5a4.5 4.5 0 0 1 1.544-3.393Q8.844 9.002 8 9c-5 0-6 3-6 4m9.886-3.54c.18-.613 1.048-.613 1.229 0l.043.148a.64.64 0 0 0 .921.382l.136-.074c.561-.306 1.175.308.87.869l-.075.136a.64.64 0 0 0 .382.92l.149.045c.612.18.612 1.048 0 1.229l-.15.043a.64.64 0 0 0-.38.921l.074.136c.305.561-.309 1.175-.87.87l-.136-.075a.64.64 0 0 0-.92.382l-.045.149c-.18.612-1.048.612-1.229 0l-.043-.15a.64.64 0 0 0-.921-.38l-.136.074c-.561.305-1.175-.309-.87-.87l.075-.136a.64.64 0 0 0-.382-.92l-.148-.045c-.613-.18-.613-1.048 0-1.229l.148-.043a.64.64 0 0 0 .382-.921l-.074-.136c-.306-.561.308-1.175.869-.87l.136.075a.64.64 0 0 0 .92-.382zM14 12.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0" />
+                    </svg></a></div>
+
+        </nav>
+    </div>
+
+
+
+
+    <div class="body-main">
+        <div class="container">
+            <h1>Citizens Blogs</h1>
+            <div class="blog-post" onclick="openModal('Blog Post 1', 'This is the content of blog post 1.')">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjgPyl_Tf8HBIuRUTMSGc4DEpoqZ6PB84U5g&s"
+                    alt="Blog 1">
+                <h2>Blog Post 1</h2>
+                <p>Click to read more...</p>
+
+
+                <ul>
+                    <li><button class="dislike"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
+                                fill="currentColor" class="bi bi-ban" viewBox="0 0 16 16">
+                                <path
+                                    d="M15 8a6.97 6.97 0 0 0-1.71-4.584l-9.874 9.875A7 7 0 0 0 15 8M2.71 12.584l9.874-9.875a7 7 0 0 0-9.874 9.874ZM16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0" />
+                            </svg></button></li>
+
+                    <li class="views">Views : 999</li>
+
+                    <li><button class="like"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
+                                fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
+                                <path
+                                    d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.56.56 0 0 0-.163-.505L1.71 6.745l4.052-.576a.53.53 0 0 0 .393-.288L8 2.223l1.847 3.658a.53.53 0 0 0 .393.288l4.052.575-2.906 2.77a.56.56 0 0 0-.163.506l.694 3.957-3.686-1.894a.5.5 0 0 0-.461 0z" />
+                            </svg></button></li>
+                </ul>
+
+
+            </div>
+            <div class="blog-post" onclick="openModal('Blog Post 2', 'This is the content of blog post 2.')">
+                <img src="https://www.impactplus.com/hubfs/blogging-for-business-heres-everything-you-need-to-know.jpg"
+                    alt="Blog 2">
+                <h2>Blog Post 2</h2>
+                <p>Click to read more...</p>
+
+                <ul>
+                    <li><button class="dislike"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
+                                fill="currentColor" class="bi bi-ban" viewBox="0 0 16 16">
+                                <path
+                                    d="M15 8a6.97 6.97 0 0 0-1.71-4.584l-9.874 9.875A7 7 0 0 0 15 8M2.71 12.584l9.874-9.875a7 7 0 0 0-9.874 9.874ZM16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0" />
+                            </svg></button></li>
+
+                    <li class="views">Views : 999</li>
+
+                    <li><button class="like"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
+                                fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
+                                <path
+                                    d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.56.56 0 0 0-.163-.505L1.71 6.745l4.052-.576a.53.53 0 0 0 .393-.288L8 2.223l1.847 3.658a.53.53 0 0 0 .393.288l4.052.575-2.906 2.77a.56.56 0 0 0-.163.506l.694 3.957-3.686-1.894a.5.5 0 0 0-.461 0z" />
+                            </svg></button></li>
+                </ul>
+
+            </div>
+        </div>
+
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h2 id="modal-title"></h2>
+                <p id="modal-body"></p>
+            </div>
+        </div>
+    </div>
+   
+    <script>
+        function openModal(title, content) {
+            document.getElementById('modal-title').innerText = title;
+            document.getElementById('modal-body').innerText = content;
+            document.getElementById('modal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('modal').style.display = 'none';
+        }
+    </script>
+ <footer>
+    <p>&copy; 2024 Tilottama Connect</p>
+</footer>
+</body>
+
+</html>

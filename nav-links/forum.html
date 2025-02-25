@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- Navigation Bar -->
+  <div class="nav-bar">
+    <nav>
+      <div class="essentials">
+        <div class="logo">Tilottama Connect</div>
+        <ul class="nav-links">
+
+          <li><a href="\index.html">Home</a></li>
+          <li><a href="weather.html"><span class="temp"></span> | <span class="cld"></span> </a></li>
+          <li><a href="waste.html">Waste Management</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="blogs.html">Blog</a></li>
+          <li><a href="forum.html" id="active">Forum</a></li>
+          <li></li>
+        </ul>
+        <button id="togglePanel">☰</button>
+      </div>
+      <div class="accnt2"><a href="tilu_ai.html"><svg class="tilu" xmlns="http://www.w3.org/2000/svg" width="25"
+            height="25" fill="#61ff61" class="bi bi-brilliance" viewBox="0 0 16 16">
+            <path
+              d="M8 16A8 8 0 1 1 8 0a8 8 0 0 1 0 16M1 8a7 7 0 0 0 7 7 3.5 3.5 0 1 0 0-7 3.5 3.5 0 1 1 0-7 7 7 0 0 0-7 7" />
+          </svg></a></div>
+      <div class="accnt"><a href="Account.html"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
+            fill="white" class="bi bi-person-fill-gear" viewBox="0 0 16 16">
+            <path
+              d="M11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0m-9 8c0 1 1 1 1 1h5.256A4.5 4.5 0 0 1 8 12.5a4.5 4.5 0 0 1 1.544-3.393Q8.844 9.002 8 9c-5 0-6 3-6 4m9.886-3.54c.18-.613 1.048-.613 1.229 0l.043.148a.64.64 0 0 0 .921.382l.136-.074c.561-.306 1.175.308.87.869l-.075.136a.64.64 0 0 0 .382.92l.149.045c.612.18.612 1.048 0 1.229l-.15.043a.64.64 0 0 0-.38.921l.074.136c.305.561-.309 1.175-.87.87l-.136-.075a.64.64 0 0 0-.92.382l-.045.149c-.18.612-1.048.612-1.229 0l-.043-.15a.64.64 0 0 0-.921-.38l-.136.074c-.561.305-1.175-.309-.87-.87l.075-.136a.64.64 0 0 0-.382-.92l-.148-.045c-.613-.18-.613-1.048 0-1.229l.148-.043a.64.64 0 0 0 .382-.921l-.074-.136c-.306-.561.308-1.175.869-.87l.136.075a.64.64 0 0 0 .92-.382zM14 12.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0" />
+          </svg></a></div>
+
+    </nav>
+  </div>
+
+  <!-- <aside class="side-panel" id="sidePanel">
+        <ul class="nav-links">
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="weather.html">20°C | Cloudy </a></li>
+            <li><a href="#waste">Waste Routes</a></li>
+            <li><a href="#waste">Waste Management</a></li>
+            <li><a href="#schools">Events</a></li>
+            <li><a href="forum.html">Forum</a></li>
+            <li><a href="Account.html"><img src="https://i.ibb.co/Y790CYcC/Account.png" class="Account_pic"></a></li>
+          </ul>
+        </div>
+      </aside> -->
+
+
+
+
+  <style>
+    .nav-bar {
+      position: fixed;
+      top: 0;
+      z-index: 9999;
+      max-height: 120px;
+      width: 100%;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      flex-direction: row;
+    }
+
+    nav {
+      justify-content: space-around;
+      align-items: center;
+      display: flex;
+      width: 100%;
+      height: auto;
+
+    }
+
+
+    div.accnt {
+      background: rgba(0, 0, 0, 0.596);
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      right: 0;
+      top: 0;
+      max-width: 50px;
+      max-height: 50px;
+      margin-right: 2%;
+      margin-top: 1%;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.473);
+    }
+
+    .accnt2 {
+      margin-left: 30px;
+      margin-right: 30px;
+      color: white;
+      background: rgba(0, 0, 0, 0.596);
+      padding: 20px;
+      padding-bottom: -10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      right: 0;
+      top: 0;
+      max-width: 50px;
+      max-height: 50px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.473);
+      margin-right: 6%;
+      margin-top: 1%;
+    }
+
+    main {
+      display: flex;
+      padding: 20px;
+      margin-top: 5%;
+    }
+
+    .categories {
+      width: 20%;
+      background: rgba(0, 0, 0, 0.705);
+      padding: 15px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      color: white;
+      border-radius: 16px;
+    }
+
+    .categories h2 {
+      color: #ffffff;
+    }
+
+    .category {
+      padding: 10px 0;
+      border: 1px solid #ddd;
+      border-radius: 16px;
+      margin-bottom: 5px;
+      padding-left: 20px;
+      transition: 0.25s ease-in-out;
+    }
+
+    .category:hover {
+      cursor: pointer;
+      background-color: #f0f0f0;
+      color: black;
+    }
+
+    .threads {
+      width: 80%;
+      padding: 0 20px;
+
+
+    }
+
+    .thread {
+
+      border: 1px solid rgba(128, 128, 128, 0.315);
+      border-radius: 16px;
+      padding: 15px;
+      margin-bottom: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      transition: 0.25s ease-in-out;
+    }
+
+    .thread:hover {
+      cursor: pointer;
+      background-color: #00ff005b;
+    }
+
+    .thread h3 {
+      margin: 0;
+      color: #2d3e50;
+    }
+
+    .footer {
+      background-color: #2d3e50;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+
+    .post{
+      width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+
+    .post input{
+      height:50px;
+      border-radius: 16px;
+      width:100%;
+      border:1px solid rgba(128, 128, 128, 0.215);
+      background-color: transparent;
+      padding-left: 10px;
+
+    }
+    .post input:focus{
+      background-color: transparent;
+      outline: none;
+      
+    }
+    .post button{
+      margin-top: 7px;
+      height:40px;
+     border-radius: 16px;
+      font-weight: bold;
+      color:rgb(255, 255, 255);
+      font-size: medium;
+        width:8%;
+        border:1px solid black;
+      border:1px solid white;
+      background-color: transparent;
+      position: relative;
+      margin-left:90%;
+
+    }
+    .post button:hover{
+      background-color: white;
+      color: black;
+    }
+    .field{
+      padding: 15px;
+      border-radius: 16px;
+      display:flex;
+      flex-direction: column;
+      background-color: #2d3e50;
+      width:60%;
+      margin-top: -7vh;
+      margin-right: -20vh;
+    }
+  </style>
+
+
+  <main>
+    <div class="categories">
+      <h2>Categories</h2>
+      <div class="category">Mayor's Desk</div>
+      <div class="category">Business & Economy Hub</div>
+      <div class="category">Community & Lifestyle </div>
+      <div class="category">Innovation & Tech in Tilottama</div>
+      <div class="category">Public Voice & Feedback</div>
+      <div class="category" style="background:white; color:black;">Help & Support</div>
+    </div>
+    <div class="threads">
+      <div class="thread">
+        <h3>How to be safe from Dengue ?</h3>
+        <p>Last post by Mayank | Replies: 5 | Views: 300</p>
+      </div>
+      <div class="thread">
+        <h3>Malai AIDS lagyo, Gharmai Upachar kasarigarxan hola?</h3>
+        <p>Last post by Nishant | Replies: 9999 | Views: 9999</p>
+      </div>
+
+
+      <div class="thread">
+        <h3>Mitho momo paine pasal kaha chha hola?</h3>
+        <p>Last post by Nabodit | Replies: 8 | Views: 69</p>
+      </div>
+    </div>
+  </main>
+  <div class="post">
+    <div class="field">
+    <input type="text" placeholder="Ask People"><button>Post</button>
+    </div>
+  </div>
+  </div>
+  <div class="footer">
+    <p>&copy; 2025 Forum. All Rights Reserved.</p>
+  </div>
+</body>
+
+</html>
+
+
+
+</body>
+
+</html>

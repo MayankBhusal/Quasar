@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<!-- updated -->
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Municipality Website</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+ 
+  <style>
+    .tempo {
+      position: fixed;
+    }
+
+    .temp0::after {
+      content: '';
+      position: absolute;
+      margin: 10px;
+
+      width: 20px;
+      height: 20px;
+      background-color: #000000;
+      clip-path: polygon(100% 50%, 0 0, 0 100%);
+      /* Create the arrow shape */
+      cursor: pointer;
+    }
+
+    .section {
+      max-width: 100%;
+      padding-left: 20%;
+      display: flex;
+      flex-direction: column;
+      align-content: right;
+      justify-content: right;
+
+      margin: 0 auto;
+      background: white;
+      padding: 0;
+      box-shadow: 0 5px 15px rgba(191, 141, 141, 0.2);
+    }
+
+    h2 {
+      color: #ff5733;
+      margin-bottom: 20px;
+    }
+
+    .map-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 20px 0;
+      margin-left: -5%;
+
+    }
+
+    .shift {
+      margin-left: 20%;
+    }
+
+    .faq-container,
+    .complain-container {
+      margin-left: 15%;
+      margin-right: 10%;
+      width: 75%;
+      background: #f8f9fa;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+
+
+    .map-container iframe {
+      width: 80%;
+      height: 500px;
+      border: 0;
+      display: flex;
+      align-items: center;
+     
+      margin-left: 20%;
+      margin-right: 10%;
+      border-radius: 16px;
+      border:1px solid black;
+    }
+
+    textarea {
+      resize: none;
+      border-radius: 16px;
+    }
+
+    .contact-item,
+    .about-item {
+      
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      font-weight: 400;
+      color: #333;
+      background: #f4f4f4;
+      padding: 15px;
+      border-radius: 16px;
+      transition: transform 0.3s, background 0.3s;
+      padding-left: 2%;
+      padding-right: 2%;
+      margin-left: 15%;
+      margin-right: 10%;
+      width: 75%;
+    }
+
+    .shift {
+      margin-left: 15%;
+    }
+
+    .contact-item i,
+    .about-item i {
+      margin-right: 10px;
+      font-size: 22px;
+    }
+
+    .faq-item {
+      cursor: pointer;
+      font-weight: bold;
+      margin-bottom: 10px;
+      transition: color 0.3s ease-in-out;
+    }
+
+    .faq-item:hover {
+      color: #ff5733;
+    }
+
+    .faq-answer {
+      display: none;
+      margin-bottom: 15px;
+    }
+
+    .complain-box {
+      width: 100%;
+      height: 100px;
+      margin-top: 10px;
+      padding: 10px;
+  
+    }
+
+    .send-button {
+      background-color: #ff5733;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .social-container {
+      text-align: center;
+      margin-top: 20px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .social-container svg {
+      margin-left: 50px;
+    }
+
+    .send-button {
+      border-radius: 16px;
+      font-weight: bold;
+      transition: 0.5s;
+    }
+
+    .send-button:hover {
+      background-color: green;
+    }
+
+    .inst {
+      margin-bottom: 5px;
+    }
+
+
+    .nav-bar {
+      position: fixed;
+      top: 0;
+      z-index: 9999;
+      max-height: 100px;
+      width: 100%;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      flex-direction: row;
+    }
+
+    nav {
+      justify-content: space-around;
+      align-items: center;
+      display: flex;
+      width: 100%;
+      height: auto;
+
+    }
+
+
+    div.accnt {
+      background: rgba(0, 0, 0, 0.596);
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      right: 0;
+      top: 0;
+      max-width: 50px;
+      max-height: 50px;
+      margin-right: 2%;
+      margin-top: 1%;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.473);
+    }
+
+    .accnt2 {
+      margin-left: 30px;
+      margin-right: 30px;
+      color: white;
+      background: rgba(0, 0, 0, 0.596);
+      padding: 20px;
+      padding-bottom: -10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      right: 0;
+      top: 0;
+      max-width: 50px;
+      max-height: 50px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.473);
+      margin-right: 6%;
+      margin-top: 1%;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* .imgbox{
+      display:flex;
+      max-width: 5vh;
+      max-height: 7vh;
+    } */
+    .imgbox img{
+      max-width: 15vh;
+      max-height: 17vh;
+    }
+  </style>
+
+</head>
+
+<body>
+  <!-- Navigation Bar -->
+  <div class="nav-bar">
+    <nav>
+      <div class="essentials">
+        <div class="logo">Tilottama Connect</div>
+        <ul class="nav-links">
+
+          <li><a href="index.html" id="active">Home</a></li>
+          <li><a href="nav-links/weather.html"><span class="temp"></span> | <span class="cld"></span> </a></li>
+          <li><a href="nav-links/waste.html">Waste Management</a></li>
+          <li><a href="nav-links/events.html">Events</a></li>
+          <li><a href="nav-links/blogs.html">Blog</a></li>
+          <li><a href="nav-links/forum.html">Forum</a></li>
+          <li></li>
+        </ul>
+        <button id="togglePanel">☰</button>
+      </div>
+    
+      <div class="accnt2"><a href="nav-links/tilu_ai.html"><svg class="tilu" xmlns="http://www.w3.org/2000/svg"
+            width="25" height="25" fill="#61ff61" class="bi bi-brilliance" viewBox="0 0 16 16">
+            <path
+              d="M8 16A8 8 0 1 1 8 0a8 8 0 0 1 0 16M1 8a7 7 0 0 0 7 7 3.5 3.5 0 1 0 0-7 3.5 3.5 0 1 1 0-7 7 7 0 0 0-7 7" />
+          </svg></a></div>
+      <div class="accnt"><a href="nav-links/Account.html"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
+            fill="white" class="bi bi-person-fill-gear" viewBox="0 0 16 16">
+            <path
+              d="M11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0m-9 8c0 1 1 1 1 1h5.256A4.5 4.5 0 0 1 8 12.5a4.5 4.5 0 0 1 1.544-3.393Q8.844 9.002 8 9c-5 0-6 3-6 4m9.886-3.54c.18-.613 1.048-.613 1.229 0l.043.148a.64.64 0 0 0 .921.382l.136-.074c.561-.306 1.175.308.87.869l-.075.136a.64.64 0 0 0 .382.92l.149.045c.612.18.612 1.048 0 1.229l-.15.043a.64.64 0 0 0-.38.921l.074.136c.305.561-.309 1.175-.87.87l-.136-.075a.64.64 0 0 0-.92.382l-.045.149c-.18.612-1.048.612-1.229 0l-.043-.15a.64.64 0 0 0-.921-.38l-.136.074c-.561.305-1.175-.309-.87-.87l.075-.136a.64.64 0 0 0-.382-.92l-.148-.045c-.613-.18-.613-1.048 0-1.229l.148-.043a.64.64 0 0 0 .382-.921l-.074-.136c-.306-.561.308-1.175.869-.87l.136.075a.64.64 0 0 0 .92-.382zM14 12.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0" />
+          </svg></a></div>
+
+    </nav>
+  </div>
+  <!-- Full-Screen Landing Section -->
+  <section class="landing">
+    <div class="landing-content">
+      <h1>Welcome to <span class="highlight">Green Tilottama</span></h1>
+      <p class="Welcome">Your Gateway to a Smarter City</p>
+      <a href="#explore" class="cta-button">Explore More</a>
+    </div>
+  </section>
+
+  <!-- Side Panel -->
+  <!-- <aside class="side-panel" id="sidePanel">
+    <ul class="nav-links">
+      <li><a href="/index.html">Home</a></li>
+      <li><a href="nav-links/weather.html"><span id="temp"></span> | <span id="cloud3"></span></li>
+            <li><a href="#waste">Waste Management</a></li>
+            <li><a href="#schools">Events</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="forum.html">Forum</a></li>
+            <li><a href="nav-links/Account.html"><img src="https://i.ibb.co/Y790CYcC/Account.png" class="Account_pic"></a></li>
+    </ul>
+    </div>
+  </aside> -->
+
+
+  <div class="tempo">
+
+    <aside class="side-panel edit" id="sidePanel2">
+
+      <div class="promo-banners">
+        <h3>Promotional Banners</h3>
+        <div class="banner">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdyXPipfR22slsVj9onleAhUW-rvXJzrTMLQ&s"
+            alt="Promo 1">
+          <p>Elon to Buy TikTok</p>
+        </div>
+        <div class="banner">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQffDGogjVdYpz1mIIsYLXSQnhng80lqQJoTg&s">
+          <p>SpaceX to lauch Starship</p>
+        </div>
+      </div>
+      <div class="citizen-of-week">
+        <h3>Citizen of the Week</h3>
+        <div class="citizen">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLHcSEaibo4qBn4ZgFY58MCmgi_UJEYH0uEQ&s"
+            alt="Citizen of the Week">
+          <p></p>
+          <p>For his outstanding contribution to the community.</p>
+        </div>
+      </div>  
+    </aside>
+  </div>
+  <!-- ABOUT US -->
+  <section id="about" class="section">
+    <h2 class="shift">About Tilottama</h2>
+    <div class="about-item" style="text-align: justify;"><i></i> Tilottama is a vibrant and rapidly growing municipality located in the Rupandehi
+      District of Province No. 5 in Nepal. It is a place where tradition meets modernity, with a rich cultural heritage
+      and an emerging economic landscape. Named after the legendary figure, Tilottama, a character from Hindu mythology
+      who is said to be the epitome of beauty, the municipality is known for its scenic beauty, agricultural
+      productivity, and proximity to major cities.
+<br>
+
+<br>
+      The municipality is situated in the southern part of Nepal, close to the Indian border. Its strategic location
+      provides it with easy access to both domestic and international trade routes, contributing significantly to its
+      economic development. The region has long been an agricultural hub, with fertile lands that produce a variety of
+      crops, including rice, maize, sugarcane, and vegetables. The vast agricultural fields, along with the presence of
+      irrigation systems, make Tilottama a key contributor to Nepal's food production.
+<br>
+
+<br>
+      One of the key features of Tilottama is its rich cultural diversity. The population is made up of various ethnic
+      groups, including Brahmins, Chhetris, Magars, and Tharus, among others. This cultural mosaic is reflected in the
+      festivals, rituals, and traditions celebrated throughout the year. Hinduism is the predominant religion, with
+      temples and religious shrines scattered across the municipality. Festivals such as Dashain, Tihar, and Maghe
+      Sankranti are celebrated with great enthusiasm, bringing the community together in joyful celebrations.
+<br>
+<br>
+      The municipality is also known for its historical significance. The region is home to several ancient temples and
+      monuments that have stood the test of time. These sites not only hold religious importance but also serve as
+      symbols of the municipality’s historical and cultural heritage. One such site is the beautiful Lumbini, the
+      birthplace of Lord Buddha, which lies within close proximity. This UNESCO World Heritage Site attracts pilgrims
+      and tourists from all over the world, making Tilottama an essential stop on the Buddhist pilgrimage route.
+<br>
+<br>
+      Tilottama has witnessed significant infrastructural development in recent years. Roads, bridges, and
+      transportation facilities have been upgraded to meet the growing demands of its population. The municipality is
+      well-connected by road to nearby cities like Butwal, Siddhartha Nagar, and other parts of the country.
+<br>
+
+<br>
+      Additionally, it has seen an improvement in the educational sector, with several schools, colleges, and training
+      centers catering to the educational needs of the local community. The education system in Tilottama has focused on
+      improving literacy rates and offering a variety of educational programs to students.
+<br>
+<br>
+      As a modern municipality, Tilottama is also focusing on urbanization and industrialization. Small and medium-sized
+      enterprises (SMEs) have sprung up in various sectors, including manufacturing, retail, and services. The
+      municipality’s leadership is working towards creating a more sustainable and economically diverse environment,
+      while also addressing the needs of the local population.
+      <br>
+      <br>
+    </div>
+    
+  </section>
+  <!-- TILOTTAMA MUNICIPALITY MAP -->
+  <section id="map" class="section">
+    <h2 class="shift">Tilottama Municipality Map</h2>
+    <div class="map-container">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.274031877435!2d83.46433431453969!3d27.679949982799607!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3996874b0fd8c5a5%3A0x8e0f5d8a848c94f8!2sTilottama%20Municipality!5e0!3m2!1sen!2snp!4v1614570268427!5m2!1sen!2snp"
+        allowfullscreen="" loading="lazy">
+      </iframe>
+    </div>
+    <!-- FAQ -->
+    <section id="faq" class="faq-container">
+      <h2>Frequently Asked Questions</h2>
+      <p class="faq-item" onclick="toggleAnswer('faq1')">How can I register my business?</p>
+      <p id="faq1" class="faq-answer">You can register your business at the municipal office with the required
+        documents.</p>
+      <p class="faq-item" onclick="toggleAnswer('faq2')">Where can I pay my taxes?</p>
+      <p id="faq2" class="faq-answer">You can pay taxes online through our website or at the municipal office.</p>
+      <p class="faq-item" onclick="toggleAnswer('faq3')">How to report a public issue?</p>
+      <p id="faq3" class="faq-answer">You can submit a complaint using the form below.</p>
+    </section>
+
+    <!-- COMPLAIN -->
+    <section id="complain" class="complain-container">
+      <h2>Complain & Report Issues</h2>
+      <p>Submit complaints and report issues regarding municipal services.</p>
+      <textarea class="complain-box" placeholder="Enter your complaint here..."></textarea>
+      <button class="send-button">Send</button>
+    </section>
+
+
+  </section>
+  <!-- EMERGENCY CONTACTS -->
+  <section id="contacts" class="section">
+    <h2 class="shift">Emergency Contacts</h2>
+    <div class="contact-item"><i class="fas fa-fire"></i> 🔥Fire Department: 101</div>
+    <div class="contact-item"><i class="fas fa-shield-alt"></i>👮 Police Station: 100</div>
+    <div class="contact-item"><i class="fas fa-phone-alt"></i> Municipal Helpline: 6969696969</div>
+  </section>
+
+
+
+</div> <!-- End of container -->
+
+<footer style="background-color: #2c3e50; color: white; padding: 40px 0; text-align: center;">
+    <div class="container" style="max-width: 1200px; margin: auto; padding: 0 20px;">
+        <div style="display: flex; justify-content: space-between; flex-wrap: wrap; align-items: center; margin-bottom: 20px;">
+            <div style="flex: 1; min-width: 200px; margin: 10px;">
+                <h3 style="margin-bottom: 10px; font-size: 20px; font-weight: bold;">Contact Us</h3>
+                <p style="margin: 5px 0; font-size: 14px;">Email: <a href="mailto:info@tilottamaconnect.com" style="color: #61ff61; text-decoration: none;">info@tilottamaconnect.com</a></p>
+                <p style="margin: 5px 0; font-size: 14px;">Phone: <a href="tel:+1234567890" style="color: #61ff61; text-decoration: none;">+1 234 567 890</a></p>
+                <p style="margin: 5px 0; font-size: 14px;">Address: 123 Tilottama St, Tilottama Municipality</p>
+            </div>
+            <div style="flex: 1; min-width: 200px; margin: 10px;">
+                <h3 style="margin-bottom: 10px; font-size: 20px; font-weight: bold;">Follow Us</h3>
+                <div>
+                    <a href="https://www.facebook.com" target="_blank" style="color: #3b5998; margin: 0 10px; text-decoration: none; font-size: 18px;">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#1877F2" class="bi bi-facebook"
+                      viewBox="0 0 16 16">
+                      <path
+                        d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951" />
+                    </svg>
+                    </a>
+                    <a href="https://www.twitter.com" target="_blank" style="color: #1DA1F2; margin: 0 10px; text-decoration: none; font-size: 18px;">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="black" class="bi bi-twitter-x"
+                      viewBox="0 0 16 16">
+                      <path
+                        d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z" />
+                    </svg>
+                    </a>
+                    <a href="https://www.instagram.com" target="_blank" style="color: #C13584; margin: 0 10px; text-decoration: none; font-size: 18px;">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 16 16">
+                        <defs>
+                          <linearGradient id="instagram-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#f58529; stop-opacity:1" />
+                            <stop offset="50%" style="stop-color:#d3508d; stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#8134af; stop-opacity:1" />
+                          </linearGradient>
+                        </defs>
+                        <path fill="url(#instagram-gradient)"
+                          d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334" />
+                      </svg>
+                    </a>
+                    <a href="https://www.linkedin.com" target="_blank" style="color: #0077B5; margin: 0 10px; text-decoration: none; font-size: 18px;">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
+                        <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/>
+                      </svg>
+                    </a>
+                </div>
+            </div>
+            <div style="flex: 1; min-width: 200px; margin: 10px;">
+                <h3 style="margin-bottom: 10px; font-size: 20px; font-weight: bold;">Quick Links</h3>
+                <p style="margin: 5px 0; font-size: 14px;"><a href="/privacy-policy.html" style="color: #61ff61; text-decoration: none;">Privacy Policy</a></p>
+                <p style="margin: 5px 0; font-size: 14px;"><a href="/terms-of-service.html" style="color: #61ff61; text-decoration: none;">Terms of Service</a></p>
+                <p style="margin: 5px 0; font-size: 14px;"><a href="/faq.html" style="color: #61ff61; text-decoration: none;">FAQ</a></p>
+            </div>
+        </div>
+  
+        <div>
+            <p style="margin: 10px 0; font-size: 14px;">&copy; 2023 Tilottama Connect. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
+
+
+
+
+  <script>
+    function toggleAnswer(id) {
+      var answer = document.getElementById(id);
+      if (answer.style.display === "none" || answer.style.display === "") {
+        answer.style.display = "block";
+      } else {
+        answer.style.display = "none";
+      }
+    }
+  </script>
+
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'en',  // Default language is English
+        includedLanguages: 'en,ne',  // Add Nepali language
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      }, 'google_translate_element');
+    }
+
+    (function () {
+      var script = document.createElement('script');
+      script.type = 'text/javascript';
+      script.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+      document.body.appendChild(script);
+    })();
+  </script>
+
+  <!-- Add the script.js to handle language switching -->
+  <script src="script.js"></script>
+</body>
+
+</html>
+
+
+<!-- lol -->
