@@ -1,16 +1,16 @@
 
 // Toggle Side Panel
 const togglePanelButton = document.getElementById('togglePanel');
-const sidePanel = document.getElementById('sidePanel');
+const sidePanel = document.getElementById('side-nav');
 const nav = document.querySelector('nav');
 
 
 togglePanelButton.addEventListener('click', () => {
     sidePanel.classList.toggle('active');
     if (sidePanel.classList.contains('active')) {
-        nav.style.width = 'calc(100% - 300px)'; // Adjust navbar width
+        sidePanel.style.transform = 'translateX(-300px)'; // Adjust navbar width
     } else {
-        nav.style.width = '100%'; // Reset navbar width
+        sidePanel.style.transform = 'translateX(100px)'; // Reset navbar width
     }
 });
 
@@ -18,7 +18,7 @@ togglePanelButton.addEventListener('click', () => {
 document.addEventListener('click', (event) => {
     if (!sidePanel.contains(event.target) && !togglePanelButton.contains(event.target)) {
         sidePanel.classList.remove('active');
-        nav.style.width = '100%'; // Reset navbar width
+        sidePanel.style.transform = 'translateX(100px)';// Reset navbar width
     }
 });
 
