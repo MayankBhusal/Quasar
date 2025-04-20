@@ -1,24 +1,36 @@
 
-// Toggle Side Panel
-const togglePanelButton = document.getElementById('togglePanel');
-const sidePanel = document.getElementById('side-nav');
-const nav = document.querySelector('nav');
+// Ensure code runs after DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    // Select single elements
+    const togglePanelButton = document.querySelector('.togglePanel');
+    const sidePanel = document.querySelector('.side-nav');
+    const nav = document.querySelector('nav');
 
+    // Check if elements exist before adding event listeners
+    if (togglePanelButton && sidePanel) {
+        togglePanelButton.addEventListener('click', (event) => {
+            event.stopPropagation(); // Prevent click from bubbling to document
+            sidePanel.classList.toggle('active');
+            if (sidePanel.classList.contains('active')) {
+                sidePanel.style.transform = 'translateX(-300px)'; // Original value
+            } else {
+                sidePanel.style.transform = 'translateX(100px)'; // Original value
+            }
+        });
 
-togglePanelButton.addEventListener('click', () => {
-    sidePanel.classList.toggle('active');
-    if (sidePanel.classList.contains('active')) {
-        sidePanel.style.transform = 'translateX(-300px)'; // Adjust navbar width
+        // Close Side Panel on Click Outside
+        document.addEventListener('click', (event) => {
+            if (
+                sidePanel.classList.contains('active') &&
+                !sidePanel.contains(event.target) &&
+                !togglePanelButton.contains(event.target)
+            ) {
+                sidePanel.classList.remove('active');
+                sidePanel.style.transform = 'translateX(100px)'; // Original value
+            }
+        });
     } else {
-        sidePanel.style.transform = 'translateX(100px)'; // Reset navbar width
-    }
-});
-
-// Close Side Panel on Click Outside
-document.addEventListener('click', (event) => {
-    if (!sidePanel.contains(event.target) && !togglePanelButton.contains(event.target)) {
-        sidePanel.classList.remove('active');
-        sidePanel.style.transform = 'translateX(100px)';// Reset navbar width
+        console.error('Missing elements: togglePanel or side-nav not found.');
     }
 });
 
@@ -73,66 +85,6 @@ for (let element of cldElements) {
 
 fetchWeather();
 
-// function translateLanguage(lang) {
-//     var select = document.querySelector(".goog-te-combo");
-//     if (select) {
-//         select.value = lang;
-//         select.dispatchEvent(new Event('change'));
-//     }
-// }
-
-function removeGoogleTranslateBanner() {
-    setInterval(() => {
-        let bannerFrame = document.querySelector('.goog-te-banner-frame'); // Find the banner
-        let googleIframe = document.querySelector('iframe[style*="visibility: visible"]'); // Find visible Google iframe
-
-        if (bannerFrame) bannerFrame.remove(); // Remove the banner
-        if (googleIframe) googleIframe.remove(); // Remove Google’s floating iframe
-
-        document.body.style.top = '0px'; // Prevents shifting issue
-    }, 100);
-}
-
-// Run the function after page loads
-window.onload = removeGoogleTranslateBanner;
-// Function to change language and apply margin
-// Function to change language and adjust navbar margin
-function translateLanguage(lang) {
-    localStorage.setItem("selectedLanguage", lang); // Store language preference
-
-    let navbar = document.querySelector("nav"); // Select the navbar
-    if (navbar) {
-        if (lang === 'ne') {
-            navbar.style.marginTop = "50px"; // Add margin for Nepali
-        } else {
-            navbar.style.marginTop = "50px"; // Reset for English
-        }
-    }
-
-    // Simulate Google Translate language change
-    var selectField = document.querySelector(".goog-te-combo");
-    if (selectField) {
-        selectField.value = lang;
-        selectField.dispatchEvent(new Event('change'));
-    }
-}
-
-// Function to apply stored language preference on page load
-function applyStoredLanguage() {
-    let storedLang = localStorage.getItem("selectedLanguage");
-
-    let navbar = document.querySelector("nav");
-    if (navbar) {
-        if (storedLang === 'ne') {
-            navbar.style.marginTop = "50px";
-        } else {
-            navbar.style.marginTop = "50px";
-        }
-    }
-}
-
-// Run on every page load
-document.addEventListener("DOMContentLoaded", applyStoredLanguage);
 
 
 
@@ -172,10 +124,28 @@ function openModal(modalId) {
     var modal = document.getElementById(modalId);
     modal.style.display = "block";
     document.body.style.overflow = "hidden"; // Disable scrolling
-}
+   }
 
 function closeModal(modalId) {
     var modal = document.getElementById(modalId);
     modal.style.display = "none";
     document.body.style.overflow = "auto"; // Enable scrolling again
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Apply saved theme preference on page load
+    if (localStorage.getItem('theme') === 'dark') {
+        document.body.classList.add('dark-mode');
+    }
+
+    // Define toggle function for the dark mode button
+    window.toggleDarkMode = function() {
+        document.body.classList.toggle('dark-mode');
+        // Update localStorage based on current theme
+        if (document.body.classList.contains('dark-mode')) {
+            localStorage.setItem('theme', 'dark');
+        } else {
+            localStorage.setItem('theme', 'light');
+        }
+    };
+});

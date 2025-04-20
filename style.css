@@ -58,7 +58,7 @@ body, html{
     color: #61ff61;
   }
   
-  nav #togglePanel {
+  nav .togglePanel {
     background: none;
     border: none;
     color: white;
@@ -132,7 +132,7 @@ body, html{
   
 
   .side-panel .nav-links{
-    background: rgba(187, 187, 187, 0.6);
+    background: rgba(187, 187, 187, 0.721);
     border-radius: 16px;
     
 
@@ -346,7 +346,7 @@ body, html{
     nav .nav-links {
       display: none;
     }
-    nav #togglePanel {
+    nav .togglePanel {
       display: block;
     }
     .landing-content h1 {
@@ -447,4 +447,8 @@ iframe[style*="visibility: visible"] {
 body {
   top: 0px !important;
   position: static !important;
+}
+.dark-mode {
+  background: #121212;
+  color: #eee;
 }

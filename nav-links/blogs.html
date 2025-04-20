@@ -68,13 +68,15 @@
             margin-top: 1%;
         }
 
-        body {
+        /* body {
 
-            background-color: #fff;
+            background:url("https://nepalisearchengine.com/storage/files/np/966/c15240a136336e85e95344fc37d97bcc.jpg?v=1");
             color: #333;
             margin: 0;
-            padding: 20px;
-        }
+            padding: 0;
+            background-repeat: no-repeat;
+            background-size: cover;
+        } */
 
         .container {
             max-width: 700px;
@@ -196,8 +198,12 @@
     </style>
 </head>
 
-<body>
-
+<body style="background-image: url('https://nepalisearchengine.com/storage/files/np/966/c15240a136336e85e95344fc37d97bcc.jpg?v=1');
+ background-size: cover; 
+ background-position: center; 
+ background-repeat: no-repeat; 
+ background-attachment: fixed; 
+ min-height: 100vh;">
 
     <div class="nav-bar">
         <nav>
@@ -213,7 +219,7 @@
                     <li><a href="forum.html">Forum</a></li>
 
                 </ul>
-                <button id="togglePanel">☰</button>
+                <button class="togglePanel">☰</button>
             </div>
             <div class="accnt2"><a href="tilu_ai.html" id="active"><svg class="tilu" xmlns="http://www.w3.org/2000/svg"
                         width="25" height="25" fill="#61ff61" class="bi bi-brilliance" viewBox="0 0 16 16">
@@ -229,17 +235,56 @@
         </nav>
     </div>
 
+     <!-- side-nav-bar -->
+ <aside class="side-panel side-nav" id="side-nav">
+    <ul class="nav-links">
+      <li><a href="index.html" id="active">Home</a></li>
+          <li><a href="nav-links/weather.html"><span class="temp"></span> | <span class="cld"></span> </a></li>
+          <li><a href="nav-links/waste.html">Waste Management</a></li>
+          <li><a href="nav-links/events.html">Events</a></li>
+          <li><a href="nav-links/blogs.html">Blog</a></li>
+          <li><a href="nav-links/forum.html">Forum</a></li>
+          <li></li>
+            <li><a href="nav-links/Account.html"><img src="https://i.ibb.co/Y790CYcC/Account.png" class="Account_pic"></a></li>
+            <div class="additionals">
+            <div class="promo-banners">
+                <h3>Promotional Banners</h3>
+                <div class="banner">
+                  <img src="https://nepalisearchengine.com/storage/files/np/943/345f0a97d718e3d1557592acc7540bba.jpeg"
+                    alt="Promo 1">
+                  <p>Admission form (2082) opens for Horizon GBS School</p>
+                </div>
+                <div class="banner">
+                  <img src="https://img.freepik.com/premium-psd/gaming-laptop-sale-promotion-banner_252779-916.jpg">
+                  <p>Buy New Laptop At Cheapest Price On Black Friday Sale </p>
+                </div>
+              </div>
+              <div class="citizen-of-week">
+                <h3>Citizen of the Week</h3>
+                <div class="citizen">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/d/da/Mahabir_Pun_at_Mahabir's_Center_for_Nepal_Connection_(cropped).jpg"
+                    alt="Citizen of the Week">
+                  <p>Mahabir Pun</p>
+                  <p>For his outstanding contribution to the community.</p>
+              </div>
+            </div>
+          </div>
+    </ul>
+    </div>
+  </aside>
+ <!-- side-nav-bar -->
+
 
 
 
     <div class="body-main">
         <div class="container">
-            <h1>Citizens Blogs</h1>
-            <div class="blog-post" onclick="openModal('Blog Post 1', 'This is the content of blog post 1.')">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjgPyl_Tf8HBIuRUTMSGc4DEpoqZ6PB84U5g&s"
+            <h1 style="background-color: white; padding:5px; border-radius: 10px;">Citizens Blogs</h1>
+            <div class="blog-post" onclick="openModal('विद्यार्थीहरूका लागि सहभागितामूलक अभ्यास:', 'तिलोत्तमा नगरपालिकाले विद्यार्थीहरूलाई सहभागितामूलक लोकतन्त्रको अभ्यासमा सक्रिय बनाउनको लागि विभिन्न शैक्षिक कार्यक्रमहरू र अन्तरक्रियात्मक गतिविधिहरू सञ्चालन गर्दै आएको छ। यस अन्तर्गत, विद्यालयहरूमा लोकतान्त्रिक मूल्य र मान्यताहरूबारे सचेतना फैलाउन कार्यशालाहरू, नक्कली मतदान अभ्यास, र विद्यार्थी परिषद् गठन जस्ता पहलहरू समावेश छन्। उदाहरणका लागि, वडा नम्बर १ मा रहेको होराइजन जीबीएस स्कूलमा प्रिन्सिपल गोपाल प्रसाद आचार्यको नेतृत्वमा विद्यार्थीहरूलाई नेतृत्व विकास र सामुदायिक सहभागिताबारे प्रशिक्षण दिइन्छ। यी प्रयासहरूले विद्यार्थीहरूलाई जिम्मेवार नागरिकको रूपमा तयार पार्दै उनीहरूमा लोकतान्त्रिक प्रक्रियाप्रति रुचि र सक्रियता बढाउँछ। तिलोत्तमा नगरपालिकाले यस्ता गतिविधिहरूलाई निरन्तरता दिँदै सबै वडाहरूमा सहभागितामूलक लोकतन्त्रको संस्कृति प्रवर्द्धन गर्ने लक्ष्य राखेको छ।')">
+                <img src="https://scontent.fktm6-1.fna.fbcdn.net/v/t1.15752-9/491274945_1048088990496978_4401957164050181472_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=9f807c&_nc_ohc=V2FU5EPKCToQ7kNvwHwztLr&_nc_oc=AdkufSgvlh7gzPdvutEB6PE19kCp1PWbymLZn7RjQYzcv4Bl_sNc5li4GsDSi24omvMqJzR1NB-ldQn66GGjoplE&_nc_zt=23&_nc_ht=scontent.fktm6-1.fna&oh=03_Q7cD2AEluoRenmIJD01pB1l8FvjimYEoF7aRIC-t7xGMBASpbw&oe=682C8561"
                     alt="Blog 1">
-                <h2>Blog Post 1</h2>
-                <p>Click to read more...</p>
+                <h2> विद्यार्थीहरूका लागि सहभागितामूलक अभ्यास: तिलोत्तमा नगरपालिकाद्वारा OIDP भोटिङ सम्बन्धी प्रशिक्षण</h2>
+                <p>तिलोत्तमा नगरपालिकाले विद्यार्थीहरूलाई सहभागितामूलक लोकतन्त्रको अभ्यासमा सक्रिय बनाउनको लागि .....</p>
 
 
                 <ul>
@@ -249,7 +294,7 @@
                                     d="M15 8a6.97 6.97 0 0 0-1.71-4.584l-9.874 9.875A7 7 0 0 0 15 8M2.71 12.584l9.874-9.875a7 7 0 0 0-9.874 9.874ZM16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0" />
                             </svg></button></li>
 
-                    <li class="views">Views : 999</li>
+                    <li class="views">Views : 44K </li>
 
                     <li><button class="like"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
                                 fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
@@ -260,11 +305,11 @@
 
 
             </div>
-            <div class="blog-post" onclick="openModal('Blog Post 2', 'This is the content of blog post 2.')">
-                <img src="https://www.impactplus.com/hubfs/blogging-for-business-heres-everything-you-need-to-know.jpg"
+            <div class="blog-post" onclick="openModal('होराइजन गौतम बुद्ध माध्यमिक विद्यालयमा व्यस्त दिन: नयाँ भर्ना भीड!', 'तिलोत्तमा नगरपालिकाले विद्यार्थीहरूलाई सहभागितामूलक लोकतन्त्रको अभ्यासमा सक्रिय बनाउनको लागि विभिन्न शैक्षिक कार्यक्रमहरू र अन्तरक्रियात्मक गतिविधिहरू सञ्चालन गर्दै आएको छ। यस अन्तर्गत, विद्यालयहरूमा लोकतान्त्रिक मूल्य र मान्यताहरूबारे सचेतना फैलाउन कार्यशालाहरू, नक्कली मतदान अभ्यास, र विद्यार्थी परिषद् गठन जस्ता पहलहरू समावेश छन्। उदाहरणका लागि, वडा नम्बर १ मा रहेको होराइजन जीबीएस स्कूलमा प्रिन्सिपल गोपाल प्रसाद आचार्यको नेतृत्वमा विद्यार्थीहरूलाई नेतृत्व विकास र सामुदायिक सहभागिताबारे प्रशिक्षण दिइन्छ। यी प्रयासहरूले विद्यार्थीहरूलाई जिम्मेवार नागरिकको रूपमा तयार पार्दै उनीहरूमा लोकतान्त्रिक प्रक्रियाप्रति रुचि र सक्रियता बढाउँछ। तिलोत्तमा नगरपालिकाले यस्ता गतिविधिहरूलाई निरन्तरता दिँदै सबै वडाहरूमा सहभागितामूलक लोकतन्त्रको संस्कृति प्रवर्द्धन गर्ने लक्ष्य राखेको छ।')">
+                <img src="https://scontent.fktm6-1.fna.fbcdn.net/v/t39.30808-6/484868018_1156126292971608_7417241724240139001_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=833d8c&_nc_ohc=gE6eVYB5w78Q7kNvwHGz5o9&_nc_oc=AdkwXTMCxd8NZQzTj8SePdb_bheNuscWxyuRHMrlgWmXaHKjrKrJ6HPKLxZyt2YvpIgkFLWwNZVGiPZirsISm2qr&_nc_zt=23&_nc_ht=scontent.fktm6-1.fna&_nc_gid=QZKlqZe20407_saUFgrRPg&oh=00_AfG7d0sikzhVdrjZ8jwVUUzDzGYsY2LRIYXIXKJdssLPzg&oe=680AD86F"
                     alt="Blog 2">
-                <h2>Blog Post 2</h2>
-                <p>Click to read more...</p>
+                <h2>होराइजन गौतम बुद्ध माध्यमिक विद्यालयमा व्यस्त दिन: नयाँ भर्ना भीड!</h2>
+                <p>होराइजन गौतम बुद्ध माध्यमिक विद्यालयमा शैक्षिक सत्र २०८२ का लागि भर्ना प्रक्रिया प्रारम्भ भएसँगै......</p>
 
                 <ul>
                     <li><button class="dislike"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
@@ -273,17 +318,68 @@
                                     d="M15 8a6.97 6.97 0 0 0-1.71-4.584l-9.874 9.875A7 7 0 0 0 15 8M2.71 12.584l9.874-9.875a7 7 0 0 0-9.874 9.874ZM16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0" />
                             </svg></button></li>
 
-                    <li class="views">Views : 999</li>
+                    <li class="views">Views : 1.1M </li>
 
                     <li><button class="like"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
                                 fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
                                 <path
                                     d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.56.56 0 0 0-.163-.505L1.71 6.745l4.052-.576a.53.53 0 0 0 .393-.288L8 2.223l1.847 3.658a.53.53 0 0 0 .393.288l4.052.575-2.906 2.77a.56.56 0 0 0-.163.506l.694 3.957-3.686-1.894a.5.5 0 0 0-.461 0z" />
                             </svg></button></li>
-                </ul>
+                 </ul>
+                 </div>
+                 <div class="blog-post" onclick="openModal(' नयाँ वर्ष २०८२: शुभकामनाका साथ सुरुवात!', 'मिति: २०८२ वैशाख १ गते , लेखक: सक्षम् भण्डारी नयाँ वर्षको सुरुवात सधैं खास हुन्छ — र यो वर्षको पहिलो दिन, २०८२ सालको स्वागत झनै विशेष बन्यो। विद्यालय खुलेको पहिलो दिन नै हामी साथीहरू, शिक्षकहरू र विद्यालय परिवारले आपसमा नयाँ वर्षको शुभकामना साटासाट गर्दै वर्षको पहिलो बिहानलाई सम्झनलायक बनायौं।    ')">
+                    <img src="https://scontent.fktm6-1.fna.fbcdn.net/v/t1.15752-9/491012416_1708328246777370_7875964110760744633_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=9f807c&_nc_ohc=6WUM7qGr4GkQ7kNvwFWh7gG&_nc_oc=Adm-tGuLq6X9BTOn5mndfrFZXm4ssp1w-JgI9ImzlRntDUzcoC-VhDbLVg3dJ_ESLC_Qcp8bnBtVMQtQ_eFCMI9-&_nc_zt=23&_nc_ht=scontent.fktm6-1.fna&oh=03_Q7cD2AHs_SoDTKyYwQiekAH-4K-xsv4ZtemiC5XtWfqnWKkSmQ&oe=682C8F5A"
+                        alt="Blog 1">
+                    <h2>  नयाँ वर्ष २०८२: शुभकामनाका साथ सुरुवात!</h2>
+                    <p>नयाँ वर्षको सुरुवात सधैं खास हुन्छ — र यो वर्षको पहिलो दिन, २०८२ सालको स्वागत झनै विशेष.........</p>
+        
+                    <ul>
+                        <li><button class="dislike"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
+                                    fill="currentColor" class="bi bi-ban" viewBox="0 0 16 16">
+                                    <path
+                                        d="M15 8a6.97 6.97 0 0 0-1.71-4.584l-9.874 9.875A7 7 0 0 0 15 8M2.71 12.584l9.874-9.875a7 7 0 0 0-9.874 9.874ZM16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0" />
+                                </svg></button></li>
+        
+                        <li class="views">Views : 70K </li>
+        
+                        <li><button class="like"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
+                                    fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
+                                    <path
+                                        d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.56.56 0 0 0-.163-.505L1.71 6.745l4.052-.576a.53.53 0 0 0 .393-.288L8 2.223l1.847 3.658a.53.53 0 0 0 .393.288l4.052.575-2.906 2.77a.56.56 0 0 0-.163.506l.694 3.957-3.686-1.894a.5.5 0 0 0-.461 0z" />
+                                </svg></button></li>
+                    </ul>
+        
+        
+                </div>
+                <div class="blog-post" onclick="openModal('उत्कृष्ट विद्यालय को उपाधि: होराइजन गौतम बुद्ध मा.वि.', 'साच्चै भन्नुपर्दा, यो केवल एक उपाधि होइन — यो हाम्रो विद्यालयको लगनशीलता, निरन्तर प्रयास, र समुदायप्रतिको समर्पणको प्रतीक हो। तिलोत्तमा नगरपालिका, वडा नम्बर १ मा रहेको होराइजन जीबीएस स्कूलले प्रिन्सिपल गोपाल प्रसाद आचार्य र उप-प्रिन्सिपल इन्द्र भुसालको नेतृत्वमा विद्यार्थीहरूलाई शैक्षिक उत्कृष्टतासँगै सहभागितामूलक लोकतन्त्रको अभ्यासमा सक्रिय बनाउँदै आएको छ। यहाँ सञ्चालित कार्यशालाहरू, नेतृत्व विकास कार्यक्रमहरू, र सामुदायिक गतिविधिहरूले विद्यार्थीहरूलाई जिम्मेवार र सचेत नागरिक बन्न प्रेरित गर्छ। यो विद्यालयको यो पहलले तिलोत्तमा नगरपालिकाको सहभागितामूलक लोकतन्त्र प्रवर्द्धन गर्ने लक्ष्यलाई बलियो बनाउँछ, जसले विद्यार्थीहरूमा लोकतान्त्रिक मूल्यहरूको गहिरो बुझाइ र सक्रिय सहभागिता विकास गर्दछ।')">
+                    <img src="https://scontent.fktm6-1.fna.fbcdn.net/v/t1.6435-9/107089996_1218038548539985_488239835502029462_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=833d8c&_nc_ohc=kUx_9BPnf-QQ7kNvwFUSnRW&_nc_oc=Adly2Fl9PYSKaE5IcJb_HJyIuE9XytHZWTG1w3RYVQPnzi8L7y4zIXoKK5Vc-apPgE8uJGuG8ayv0AoOxc1Am80J&_nc_zt=23&_nc_ht=scontent.fktm6-1.fna&_nc_gid=bM9vYwMBIlLeNJBT-ILvjw&oh=00_AfESTwYOYq5C-rmcSuRDpa9jsH1N7iCqpKrMrja5XTGGdA&oe=682C8BA5"
+                        alt="Blog 1">
+                    <h2>  उत्कृष्ट विद्यालय को उपाधि: होराइजन गौतम बुद्ध मा.वि.</h2>
+                    <p>साच्चै भन्नुपर्दा, यो केवल एक उपाधि होइन — यो हाम्रो विद्यालयको लगनशीलता, निरन्तर......
 
-            </div>
+                    </p>
+        
+                    <ul>
+                        <li><button class="dislike"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
+                                    fill="currentColor" class="bi bi-ban" viewBox="0 0 16 16">
+                                    <path
+                                        d="M15 8a6.97 6.97 0 0 0-1.71-4.584l-9.874 9.875A7 7 0 0 0 15 8M2.71 12.584l9.874-9.875a7 7 0 0 0-9.874 9.874ZM16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0" />
+                                </svg></button></li>
+        
+                        <li class="views">Views : 111K </li>
+        
+                        <li><button class="like"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
+                                    fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
+                                    <path
+                                        d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.56.56 0 0 0-.163-.505L1.71 6.745l4.052-.576a.53.53 0 0 0 .393-.288L8 2.223l1.847 3.658a.53.53 0 0 0 .393.288l4.052.575-2.906 2.77a.56.56 0 0 0-.163.506l.694 3.957-3.686-1.894a.5.5 0 0 0-.461 0z" />
+                                </svg></button></li>
+                    </ul>
+        
+        
+                </div>
+
         </div>
+       
 
         <div id="modal" class="modal">
             <div class="modal-content">

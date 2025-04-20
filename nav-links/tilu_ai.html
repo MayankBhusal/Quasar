@@ -108,7 +108,7 @@
           <li><a href="forum.html">Forum</a></li>
           <li></li>
         </ul>
-        <button id="togglePanel">☰</button>
+        <button class="togglePanel">☰</button>
       </div>
       <div class="accnt2"><a href="tilu_ai.html" id="active"><svg class="tilu" xmlns="http://www.w3.org/2000/svg"
             width="25" height="25" fill="#61ff61" class="bi bi-brilliance" viewBox="0 0 16 16">
@@ -123,11 +123,58 @@
 
     </nav>
   </div>
+ <!-- side-nav-bar -->
+ <aside class="side-panel side-nav" id="side-nav">
+  <ul class="nav-links">
+    <li><a href="index.html" id="active">Home</a></li>
+        <li><a href="nav-links/weather.html"><span class="temp"></span> | <span class="cld"></span> </a></li>
+        <li><a href="nav-links/waste.html">Waste Management</a></li>
+        <li><a href="nav-links/events.html">Events</a></li>
+        <li><a href="nav-links/blogs.html">Blog</a></li>
+        <li><a href="nav-links/forum.html">Forum</a></li>
+        <li></li>
+          <li><a href="nav-links/Account.html"><img src="https://i.ibb.co/Y790CYcC/Account.png" class="Account_pic"></a></li>
+          <div class="additionals">
+          <div class="promo-banners">
+            <h3>Promotional Banners</h3>
+            <div class="banner">
+              <img src="https://nepalisearchengine.com/storage/files/np/943/345f0a97d718e3d1557592acc7540bba.jpeg"
+                alt="Promo 1">
+              <p>Admission form (2082) opens for Horizon GBS School</p>
+            </div>
+            <div class="banner">
+              <img src="https://img.freepik.com/premium-psd/gaming-laptop-sale-promotion-banner_252779-916.jpg">
+              <p>Buy New Laptop At Cheapest Price On Black Friday Sale </p>
+            </div>
+          </div>
+          <div class="citizen-of-week">
+            <h3>Citizen of the Week</h3>
+            <div class="citizen">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/d/da/Mahabir_Pun_at_Mahabir's_Center_for_Nepal_Connection_(cropped).jpg"
+                alt="Citizen of the Week">
+              <p>Mahabir Pun</p>
+              <p>For his outstanding contribution to the community.</p>
+            </div>
+          </div>
+        </div>
+  </ul>
+  </div>
+</aside>
+<!-- side-nav-bar -->
+
+
 
   <div class="iframe-container">
-    <iframe frameBorder="0" src="https://tilu-ai.streamlit.app?embed=true"
-      style="height: 100vh; width: 100%; margin-top:4%;overflow: hidden;position: absolute;border:none;"></iframe>
+
+    <iframe 
+      frameBorder="0" 
+      src="https://tilu-ai.streamlit.app?embed=true" style="height: 100vh; width: 100%; margin-top:4%;
+      overflow: hidden; position: absolute;
+      border:none;"></iframe>
+
   </div>
 </body>
-
+<script src="/script.js"></script>
 </html>
+
+

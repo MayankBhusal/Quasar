@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
+
+        *{
+            font-family: 'Poppins', sans-serif;
+        }
         .nav-bar {
             position: fixed;
             top: 0;
@@ -108,17 +112,32 @@
         }
 
         .event-buttons button {
+            font-size: 1pc;
+            font-family: 'Poppins', sans-serif;
             margin: 10px;
-            padding: 12px 20px;
+            padding: 13px 22px;
             cursor: pointer;
             border: none;
-            background: #007bff;
-            color: white;
-            border-radius: 5px;
+            background: #00ff00;
+            font-weight:bolder;
+            color: rgb(0, 0, 0);
+            border-radius: 16px;
             transition: background 0.3s ease;
         }
 
+   .event-buttons .info-edit{
+        background: transparent;
+        border:2px solid #00ff00;
+    }
+
+    .event-buttons .info-edit:hover{
+        background:rgba(128, 128, 128, 0.219);
+        color:black;
+        border:2px solid black;
+    }
+
         .event-buttons button:hover {
+            color:white;
             background: #0056b3;
         }
 
@@ -171,7 +190,12 @@
     </style>
 </head>
 
-<body>
+<body style="background-image: url('https://i.ibb.co/kgvCJWg0/ll.jpg');
+ background-size: cover; 
+ background-position: center; 
+ background-repeat: no-repeat; 
+ background-attachment: fixed; 
+ min-height: 100vh;">
 
     <!-- Navigation Bar -->
     <div class="nav-bar">
@@ -188,7 +212,7 @@
                     <li><a href="forum.html">Forum</a></li>
                     <li></li>
                 </ul>
-                <button id="togglePanel">☰</button>
+                <button class="togglePanel">☰</button>
             </div>
             <div class="accnt2"><a href="tilu_ai.html"><svg class="tilu" xmlns="http://www.w3.org/2000/svg" width="25"
                         height="25" fill="#61ff61" class="bi bi-brilliance" viewBox="0 0 16 16">
@@ -204,6 +228,45 @@
         </nav>
     </div>
 
+     <!-- side-nav-bar -->
+ <aside class="side-panel side-nav" id="side-nav">
+    <ul class="nav-links">
+      <li><a href="index.html" id="active">Home</a></li>
+          <li><a href="nav-links/weather.html"><span class="temp"></span> | <span class="cld"></span> </a></li>
+          <li><a href="nav-links/waste.html">Waste Management</a></li>
+          <li><a href="nav-links/events.html">Events</a></li>
+          <li><a href="nav-links/blogs.html">Blog</a></li>
+          <li><a href="nav-links/forum.html">Forum</a></li>
+          <li></li>
+            <li><a href="nav-links/Account.html"><img src="https://i.ibb.co/Y790CYcC/Account.png" class="Account_pic"></a></li>
+            <div class="additionals">
+            <div class="promo-banners">
+                <h3>Promotional Banners</h3>
+                <div class="banner">
+                  <img src="https://nepalisearchengine.com/storage/files/np/943/345f0a97d718e3d1557592acc7540bba.jpeg"
+                    alt="Promo 1">
+                  <p>Admission form (2082) opens for Horizon GBS School</p>
+                </div>
+                <div class="banner">
+                  <img src="https://img.freepik.com/premium-psd/gaming-laptop-sale-promotion-banner_252779-916.jpg">
+                  <p>Buy New Laptop At Cheapest Price On Black Friday Sale </p>
+                </div>
+              </div>
+              <div class="citizen-of-week">
+                <h3>Citizen of the Week</h3>
+                <div class="citizen">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/d/da/Mahabir_Pun_at_Mahabir's_Center_for_Nepal_Connection_(cropped).jpg"
+                    alt="Citizen of the Week">
+                  <p>Mahabir Pun</p>
+                  <p>For his outstanding contribution to the community.</p>
+              </div>
+            </div>
+          </div>
+    </ul>
+    </div>
+  </aside>
+ <!-- side-nav-bar -->
+
     <div class="main-container">
         <div class="event-container cont-one">
             <div class="event-text">
@@ -211,8 +274,8 @@
                 <p>Join us for a charity event focused on social welfare. Help those in need and make a difference in
                     the community!</p>
                 <div class="event-buttons">
-                    <button onclick="showPopup('info')">More Info</button>
-                    <button onclick="showPopup('participate')">Participate</button>
+                    <button onclick="showPopup('info')" class="info-edit" >More Info</button>
+                    <button onclick="showPopup('participate') ">Participate</button>
                 </div>
             </div>
             <div class="event-image">
@@ -227,8 +290,8 @@
                 <p>Help us plant trees and spread awareness about sustainability. Join hands to keep Tilottama green!
                 </p>
                 <div class="event-buttons">
-                    <button onclick="showPopup('info')">More Info</button>
-                    <button onclick="showPopup('participate')">Participate</button>
+                    <button onclick="showPopup('info')" class="info-edit">More Info</button>
+                    <button onclick="showPopup('participate') ">Participate</button>
                 </div>
             </div>
             <div class="event-image">
@@ -242,7 +305,7 @@
                 <h2>Tilottama Quiz Night</h2>
                 <p>Test your knowledge with exciting quizzes. A fun night with prizes for the best minds!</p>
                 <div class="event-buttons">
-                    <button onclick="showPopup('info')">More Info</button>
+                    <button onclick="showPopup('info')" class="info-edit">More Info</button>
                     <button onclick="showPopup('participate')">Participate</button>
                 </div>
             </div>
@@ -258,7 +321,7 @@
                 <p>Learn how to manage waste effectively. Join the awareness session and contribute to a cleaner
                     Tilottama!</p>
                 <div class="event-buttons">
-                    <button onclick="showPopup('info')">More Info</button>
+                    <button onclick="showPopup('info')" class="info-edit">More Info</button>
                     <button onclick="showPopup('participate')">Participate</button>
                 </div>
             </div>
@@ -274,7 +337,7 @@
                 <p>Come and explore the amazing art from local artists. A great opportunity to support the arts in
                     Tilottama!</p>
                 <div class="event-buttons">
-                    <button onclick="showPopup('info')">More Info</button>
+                    <button onclick="showPopup('info')" class="info-edit">More Info</button>
                     <button onclick="showPopup('participate')">Participate</button>
                 </div>
             </div>
