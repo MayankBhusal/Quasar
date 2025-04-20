@@ -14,6 +14,9 @@
     .tempo {
       position: fixed;
     }
+    html {
+            scroll-behavior: smooth;
+        }
 
     .temp0::after {
       content: '';
@@ -308,7 +311,7 @@
     <div class="landing-content">
       <h1>Welcome to <span class="highlight">Green Tilottama</span></h1>
       <p class="Welcome">Your Gateway to a Smarter City</p>
-      <a href="#explore" class="cta-button">Explore More</a>
+      <a href="#about" class="cta-button">Explore More</a>
     </div>
   </section>
 
@@ -559,6 +562,8 @@
 
 
 
+
+
 <script>
   function toggleAnswer(id) {
     var answer = document.getElementById(id);
@@ -567,6 +572,13 @@
     } else {
       answer.style.display = "none";
     }
+  }
+
+  function scrollToSection(sectionId) {
+      const element = document.getElementById(sectionId);
+      if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
   }
 </script>
 
